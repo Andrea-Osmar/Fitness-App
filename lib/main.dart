@@ -1,0 +1,26 @@
+import 'package:flutter/material.dart';
+import 'screens/bmi_screen.dart';
+import 'screens/intro_screens.dart';
+import 'screens/weather_screen.dart';
+import 'screens/sessions_screen.dart';
+
+void main() {
+  runApp(const GlobeApp());
+}
+
+class GlobeApp extends StatelessWidget {
+  const GlobeApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(primarySwatch: Colors.blueGrey),
+      routes: {
+        '/': (context) => const IntroScreen(),
+        '/bmi': (context) => const BmiScreen(),
+        '/weather': (context) => const WeatherScreen(),
+        '/session': (context) => const SessionsScreen(),
+      },
+    );
+  }
+}
